@@ -1,0 +1,77 @@
+name = "api"
+main = "src/index.ts"
+compatibility_date = "2024-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Development
+[vars]
+ENVIRONMENT = "development"
+
+# R2 Bucket
+[[r2_buckets]]
+binding = "STORAGE"
+bucket_name = "my-bucket-dev"
+
+# Queue Producer
+[[queues.producers]]
+queue = "my-queue-dev"
+binding = "MY_QUEUE"
+
+# Queue Consumer
+[[queues.consumers]]
+queue = "my-queue-dev"
+max_batch_size = 10
+max_batch_timeout = 30
+
+# Scheduled (Cron) Triggers
+[triggers]
+crons = ["0 * * * *"]  # Every hour
+
+# Hyperdrive (Database connection pooling)
+# [[hyperdrive]]
+# binding = "HYPERDRIVE"
+# id = "your-hyperdrive-id"
+
+# ===================
+# Staging Environment
+# ===================
+[env.staging]
+name = "api-staging"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+
+[[env.staging.r2_buckets]]
+binding = "STORAGE"
+bucket_name = "my-bucket-staging"
+
+[[env.staging.queues.producers]]
+queue = "my-queue-staging"
+binding = "MY_QUEUE"
+
+[[env.staging.queues.consumers]]
+queue = "my-queue-staging"
+max_batch_size = 10
+max_batch_timeout = 30
+
+# ======================
+# Production Environment
+# ======================
+[env.production]
+name = "api-production"
+
+[env.production.vars]
+ENVIRONMENT = "production"
+
+[[env.production.r2_buckets]]
+binding = "STORAGE"
+bucket_name = "my-bucket-production"
+
+[[env.production.queues.producers]]
+queue = "my-queue-production"
+binding = "MY_QUEUE"
+
+[[env.production.queues.consumers]]
+queue = "my-queue-production"
+max_batch_size = 10
+max_batch_timeout = 30
