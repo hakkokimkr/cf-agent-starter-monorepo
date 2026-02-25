@@ -17,7 +17,7 @@ Production-ready Cloudflare Workers monorepo template with Supabase, Drizzle ORM
 
 ```bash
 # Clone
-git clone https://github.com/humanlabs-kr/cf-starter-template your-project
+git clone https://github.com/hakkokimkr/cf-agent-starter-monorepo your-project
 cd your-project
 
 # Install

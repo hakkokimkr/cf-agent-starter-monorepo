@@ -4,7 +4,7 @@ This document helps AI coding agents (Claude, Copilot, etc.) understand and work
 
 ## Starter Template Updates
 
-This project is based on [cf-starter-template](https://github.com/humanlabs-kr/cf-starter-template).
+This project is based on [cf-starter-template](https://github.com/hakkokimkr/cf-agent-starter-monorepo).
 
 ### Update Check (Recommended: Weekly)
 
@@ -15,9 +15,9 @@ bash scripts/check-starter-updates.sh
 Or manual check:
 
 1. **Current version:** `cat CURRENT_VERSION.json`
-2. **Latest version:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/CURRENT_VERSION
-3. **Changelog:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATES.md
-4. **Update guide:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATE_GUIDE.md
+2. **Latest version:** https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/CURRENT_VERSION
+3. **Changelog:** https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATES.md
+4. **Update guide:** https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATE_GUIDE.md
 
 ### Priority
 

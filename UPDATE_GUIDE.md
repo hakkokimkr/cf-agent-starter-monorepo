@@ -12,12 +12,12 @@ cat CURRENT_VERSION.json | jq -r '.version'
 # 출력 예: 2026-01-15-02
 
 # 최신 버전 확인 (starter repo)
-curl -s https://raw.githubusercontent.com/humanlabs-kr/cf-starter-template/main/CURRENT_VERSION
+curl -s https://raw.githubusercontent.com/hakkokimkr/cf-agent-starter-monorepo/main/CURRENT_VERSION
 # 출력 예: 2026-02-25-01
 
 # 업데이트 필요 여부 판단
 CURRENT=$(cat CURRENT_VERSION.json 2>/dev/null | jq -r '.version' 2>/dev/null || echo "none")
-LATEST=$(curl -s https://raw.githubusercontent.com/humanlabs-kr/cf-starter-template/main/CURRENT_VERSION)
+LATEST=$(curl -s https://raw.githubusercontent.com/hakkokimkr/cf-agent-starter-monorepo/main/CURRENT_VERSION)
 
 if [[ "$CURRENT" != "$LATEST" ]]; then
   echo "🔔 업데이트 가능: $CURRENT → $LATEST"
@@ -30,10 +30,10 @@ fi
 
 ```bash
 # UPDATES.md 다운로드 및 확인
-curl -s https://raw.githubusercontent.com/humanlabs-kr/cf-starter-template/main/UPDATES.md
+curl -s https://raw.githubusercontent.com/hakkokimkr/cf-agent-starter-monorepo/main/UPDATES.md
 
 # 또는 브라우저에서 확인
-# https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATES.md
+# https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATES.md
 ```
 
 ### 3. 적용 판단
@@ -84,7 +84,7 @@ git commit -m "chore: update starter template to $NEW_VERSION"
 
 set -e
 
-REPO_URL="https://raw.githubusercontent.com/humanlabs-kr/cf-starter-template/main"
+REPO_URL="https://raw.githubusercontent.com/hakkokimkr/cf-agent-starter-monorepo/main"
 CURRENT=$(cat CURRENT_VERSION.json 2>/dev/null | jq -r '.version' 2>/dev/null || echo "none")
 LATEST=$(curl -s "$REPO_URL/CURRENT_VERSION")
 
@@ -102,10 +102,10 @@ elif [[ "$CURRENT" != "$LATEST" ]]; then
   echo "🔔 업데이트 가능!"
   echo ""
   echo "📄 변경 내역 확인:"
-  echo "   https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATES.md"
+  echo "   https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATES.md"
   echo ""
   echo "📖 적용 가이드:"
-  echo "   https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATE_GUIDE.md"
+  echo "   https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATE_GUIDE.md"
   echo ""
   exit 1
 else
@@ -121,7 +121,7 @@ fi
 ```markdown
 ## Starter Template 업데이트
 
-이 프로젝트는 [cf-starter-template](https://github.com/humanlabs-kr/cf-starter-template)을 기반으로 합니다.
+이 프로젝트는 [cf-starter-template](https://github.com/hakkokimkr/cf-agent-starter-monorepo)을 기반으로 합니다.
 
 ### 업데이트 체크 (권장: 주 1회)
 
@@ -132,9 +132,9 @@ bash scripts/check-starter-updates.sh
 또는 수동 확인:
 
 1. **현재 버전:** `cat CURRENT_VERSION.json`
-2. **최신 버전:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/CURRENT_VERSION
-3. **변경 내역:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATES.md
-4. **적용 가이드:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATE_GUIDE.md
+2. **최신 버전:** https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/CURRENT_VERSION
+3. **변경 내역:** https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATES.md
+4. **적용 가이드:** https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATE_GUIDE.md
 
 ### 적용 우선순위
 
@@ -181,7 +181,7 @@ Starter template에 변경 사항 발생 시:
 **Q: CURRENT_VERSION.json이 없으면?**
 A: 처음 클론한 경우. 현재 최신 버전으로 생성:
 ```bash
-LATEST=$(curl -s https://raw.githubusercontent.com/humanlabs-kr/cf-starter-template/main/CURRENT_VERSION)
+LATEST=$(curl -s https://raw.githubusercontent.com/hakkokimkr/cf-agent-starter-monorepo/main/CURRENT_VERSION)
 echo "{\"version\":\"$LATEST\",\"updated_at\":\"$(date -u +%Y-%m-%dT%H:%M:%SZ)\",\"notes\":\"Initial version\"}" | jq . > CURRENT_VERSION.json
 ```
 
@@ -196,6 +196,6 @@ A: Breaking 변경은 수동 검토 필수. 자동화는 권장하지 않음.
 
 ## 📚 참고
 
-- [UPDATES.md](https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATES.md) - 모든 변경 내역
-- [CURRENT_VERSION](https://github.com/humanlabs-kr/cf-starter-template/blob/main/CURRENT_VERSION) - 최신 버전
-- [GitHub Issues](https://github.com/humanlabs-kr/cf-starter-template/issues) - 버그 리포트, 제안
+- [UPDATES.md](https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/UPDATES.md) - 모든 변경 내역
+- [CURRENT_VERSION](https://github.com/hakkokimkr/cf-agent-starter-monorepo/blob/main/CURRENT_VERSION) - 최신 버전
+- [GitHub Issues](https://github.com/hakkokimkr/cf-agent-starter-monorepo/issues) - 버그 리포트, 제안
