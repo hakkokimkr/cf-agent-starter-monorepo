@@ -182,7 +182,13 @@ See [AGENTS.md](./AGENTS.md) for comprehensive AI coding agent instructions, inc
 - Directory structure
 - Common tasks with code examples
 - Testing patterns
-- Code conventions
+
+See [CODE_STYLE.md](./CODE_STYLE.md) for coding conventions:
+- File naming and structure
+- Wrangler configuration patterns
+- Route, schema, and component templates
+- Import order and type safety
+- Agent-friendly patterns and templates
 
 ## License
 
