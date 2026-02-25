@@ -1,6 +1,79 @@
 # Starter Template Updates
 
-**Latest Version:** `2026-02-25-04`
+**Latest Version:** `2026-02-25-05`
+
+---
+
+## 2026-02-25-05: Add CODE_STYLE.md and improve code conventions
+
+**Category:** `docs` | **Date:** 2026-02-25
+
+### 변경 사항
+- **New file:** `CODE_STYLE.md` - Comprehensive agent-friendly coding conventions
+- **Updated:** `AGENTS.md` - Added code style reference section
+- **Updated:** `apps/api/wrangler.toml` - Added clear section comments and improved formatting
+
+### 영향도
+- ℹ️ **Non-breaking**: Documentation and comments only
+- Improves codebase consistency and agent-friendliness
+- Sets clear patterns for future development
+
+### 주요 규약
+
+**File naming:**
+- Files: `kebab-case.ts`
+- React components: `PascalCase.tsx`
+
+**Wrangler config:**
+```toml
+# One [[schedules]] block per cron
+[[schedules]]
+cron = "0 * * * *"  # Clear comment
+```
+
+**Route pattern:**
+```typescript
+const app = new Hono<{ Bindings: Env; Variables: Variables }>();
+app.get('/', async (c) => { /* ... */ });
+export default app;
+```
+
+**Database schema:**
+```typescript
+export const table = pgTable('table', {
+  id: uuid('id').primaryKey().defaultRandom(),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+export type Table = typeof table.$inferSelect;
+```
+
+### 적용 방법
+
+1. **Read CODE_STYLE.md:**
+   ```bash
+   cat CODE_STYLE.md
+   ```
+
+2. **Follow patterns when adding new code:**
+   - Check CODE_STYLE.md pattern templates
+   - Look at existing similar files
+   - Use consistent naming and structure
+
+3. **For agents:**
+   ```
+   Before making changes:
+   1. Read CODE_STYLE.md
+   2. Find similar existing code
+   3. Follow the established patterns
+   ```
+
+### 참고
+- [CODE_STYLE.md](./CODE_STYLE.md) - Full guide
+- [AGENTS.md](./AGENTS.md) - Agent-specific instructions
+
+---
+
+
 
 ---
 

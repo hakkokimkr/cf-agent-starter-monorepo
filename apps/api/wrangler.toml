@@ -3,16 +3,28 @@ main = "src/index.ts"
 compatibility_date = "2024-03-01"
 compatibility_flags = ["nodejs_compat"]
 
-# Development
+# ===================
+# Development (Default)
+# ===================
 [vars]
 ENVIRONMENT = "development"
 
-# R2 Bucket
+# ===================
+# R2 Storage
+# ===================
+# Object storage for file uploads, images, etc.
+
 [[r2_buckets]]
 binding = "STORAGE"
 bucket_name = "my-bucket-dev"
 
-# Queue Producer
+# ===================
+# Queue Configuration
+# ===================
+# Producer: Send messages to queue
+# Consumer: Process messages from queue
+
+# Queue Producer Binding
 [[queues.producers]]
 queue = "my-queue-dev"
 binding = "MY_QUEUE"
@@ -23,11 +35,22 @@ queue = "my-queue-dev"
 max_batch_size = 10
 max_batch_timeout = 30
 
-# Scheduled (Cron) Triggers
-[triggers]
-crons = ["0 * * * *"]  # Every hour
+# ===================
+# Scheduled (Cron) Jobs
+# ===================
+# Format: One [[schedules]] block per cron expression
+# Syntax: minute hour day month dayofweek
+# See: https://crontab.guru for cron expression help
 
-# Hyperdrive (Database connection pooling)
+[[schedules]]
+cron = "0 * * * *"  # Every hour at minute 0
+
+# ===================
+# Database Connection Pooling
+# ===================
+# Hyperdrive provides connection pooling for PostgreSQL
+# Uncomment and configure when using Supabase/PostgreSQL
+
 # [[hyperdrive]]
 # binding = "HYPERDRIVE"
 # id = "your-hyperdrive-id"

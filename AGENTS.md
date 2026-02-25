@@ -27,6 +27,22 @@ Or manual check:
 
 ---
 
+## 📖 Code Style & Conventions
+
+**IMPORTANT:** Read [CODE_STYLE.md](./CODE_STYLE.md) before making any code changes.
+
+Key conventions:
+- Files: `kebab-case.ts`
+- Constants: `SCREAMING_SNAKE_CASE`
+- Types: `PascalCase`
+- Wrangler cron: One `[[schedules]]` per expression
+- Always add comments for complex logic
+- Follow existing patterns in similar files
+
+**Quick reference:** When adding new features, use the pattern templates in CODE_STYLE.md.
+
+---
+
 ## Project Overview
 
 A production-ready Cloudflare Workers monorepo with:
