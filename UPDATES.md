@@ -1,6 +1,48 @@
 # Starter Template Updates
 
-**Latest Version:** `2026-02-25-03`
+**Latest Version:** `2026-02-25-04`
+
+---
+
+## 2026-02-25-04: Update Wrangler to v4.68.1
+
+**Category:** `chore` | **Date:** 2026-02-25
+
+### 변경 사항
+- Wrangler 업데이트: `^3.36.0` → `^4.68.1`
+- Cloudflare Workers CLI 최신 기능 및 성능 개선 적용
+
+### 영향도
+- ⚠️ **Major version bump**: v3 → v4
+- 대부분의 기능은 하위 호환 유지
+- 새로운 기능 및 버그 수정 포함
+
+### 적용 방법
+
+1. **package.json 업데이트:**
+   ```bash
+   # apps/api/package.json
+   # "wrangler": "^3.36.0" → "wrangler": "^4.68.1"
+   ```
+
+2. **의존성 재설치:**
+   ```bash
+   pnpm install
+   ```
+
+3. **검증:**
+   ```bash
+   pnpm --filter @repo/api dev
+   # Dev server 정상 작동 확인
+   ```
+
+### 참고
+- [Wrangler v4 Changelog](https://github.com/cloudflare/workers-sdk/releases)
+- 기존 v3 설정 대부분 호환
+
+---
+
+
 
 ---
 
