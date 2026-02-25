@@ -11,19 +11,23 @@ Production-ready Cloudflare Workers monorepo template with Supabase, Drizzle ORM
 - 📦 **Turborepo** - Fast, incremental builds
 - 🧪 **Testing** - Vitest, Playwright, and mock utilities
 - 🤖 **AI-Agent Friendly** - Comprehensive AGENTS.md guide
+- 🔄 **Version Tracking** - Easy updates from starter template
 
 ## Quick Start
 
 ```bash
 # Clone
-git clone https://github.com/your/cf-monorepo-starter
-cd cf-monorepo-starter
+git clone https://github.com/humanlabs-kr/cf-starter-template your-project
+cd your-project
 
 # Install
 pnpm install
 
 # Setup environment
 cp .env.example .env.local
+
+# Initialize version tracking
+echo '{"version":"2026-02-25-01","updated_at":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","notes":"Initial clone"}' | jq . > CURRENT_VERSION.json
 
 # Start development
 pnpm dev
@@ -153,9 +157,25 @@ For production, use Cloudflare secrets:
 wrangler secret put DATABASE_URL
 ```
 
+## Keeping Up-to-Date
+
+This starter template is actively maintained. Check for updates regularly:
+
+```bash
+# Check for updates
+bash scripts/check-starter-updates.sh
+```
+
+See [UPDATE_GUIDE.md](./UPDATE_GUIDE.md) for detailed instructions on:
+- Checking current and latest versions
+- Reviewing changelog
+- Applying updates safely
+- Version tracking
+
 ## AI Agent Guide
 
 See [AGENTS.md](./AGENTS.md) for comprehensive AI coding agent instructions, including:
+- Starter template update checks
 - Directory structure
 - Common tasks with code examples
 - Testing patterns

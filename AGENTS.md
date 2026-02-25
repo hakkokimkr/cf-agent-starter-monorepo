@@ -2,6 +2,31 @@
 
 This document helps AI coding agents (Claude, Copilot, etc.) understand and work with this codebase effectively.
 
+## Starter Template Updates
+
+This project is based on [cf-starter-template](https://github.com/humanlabs-kr/cf-starter-template).
+
+### Update Check (Recommended: Weekly)
+
+```bash
+bash scripts/check-starter-updates.sh
+```
+
+Or manual check:
+
+1. **Current version:** `cat CURRENT_VERSION.json`
+2. **Latest version:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/CURRENT_VERSION
+3. **Changelog:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATES.md
+4. **Update guide:** https://github.com/humanlabs-kr/cf-starter-template/blob/main/UPDATE_GUIDE.md
+
+### Priority
+
+- 🔴 `breaking`: Apply immediately
+- 🟢 `fix`: Apply when possible
+- 🟡 `feature/chore`: Optional
+
+---
+
 ## Project Overview
 
 A production-ready Cloudflare Workers monorepo with:
