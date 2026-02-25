@@ -1,6 +1,30 @@
 # Starter Template Updates
 
-**Latest Version:** `2026-02-25-02`
+**Latest Version:** `2026-02-25-03`
+
+---
+
+## 2026-02-25-03: Add TestFeature type
+
+**Category:** `feature` | **Date:** 2026-02-25
+
+### 변경 사항
+- `packages/shared-types`에 `TestFeature` 인터페이스 추가
+- 테스트용 타입 정의
+
+### 영향도
+- ℹ️ **Non-breaking**: 새로운 타입 추가로 기존 코드 영향 없음
+- 선택적으로 사용 가능
+
+### 적용 방법
+필요 시 import하여 사용:
+```typescript
+import { TestFeature } from '@repo/shared-types';
+```
+
+---
+
+
 
 ---
 
