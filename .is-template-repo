@@ -1,0 +1,8 @@
+# This file marks this repository as the official starter template.
+# DO NOT include this file when cloning for your own project.
+# 
+# This enables template-specific checks:
+# - Git hooks that enforce UPDATES.md documentation
+# - GitHub Actions that validate update documentation
+#
+# If you're using this as a template, delete this file after cloning.

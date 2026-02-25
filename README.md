@@ -20,6 +20,9 @@ Production-ready Cloudflare Workers monorepo template with Supabase, Drizzle ORM
 git clone https://github.com/hakkokimkr/cf-agent-starter-monorepo your-project
 cd your-project
 
+# Remove template marker (this is now your project, not the template)
+rm .is-template-repo
+
 # Install
 pnpm install
 
@@ -27,7 +30,7 @@ pnpm install
 cp .env.example .env.local
 
 # Initialize version tracking
-echo '{"version":"2026-02-25-01","updated_at":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","notes":"Initial clone"}' | jq . > CURRENT_VERSION.json
+echo '{"version":"2026-02-25-02","updated_at":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","notes":"Initial clone"}' | jq . > CURRENT_VERSION.json
 
 # Start development
 pnpm dev
