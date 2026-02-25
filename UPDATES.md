@@ -1,6 +1,68 @@
 # Starter Template Updates
 
-**Latest Version:** `2026-02-25-01`
+**Latest Version:** `2026-02-25-02`
+
+---
+
+## 2026-02-25-02: Cloudflare Workers Cron 정의 방식 변경
+
+**Category:** `breaking` | **Date:** 2026-02-25
+
+### 변경 사항
+- Wrangler v3에서 cron 정의 방식 변경
+- `triggers.crons` → `[[schedules]]` 섹션으로 이동
+- 더 명확한 cron 설정 구조
+
+### 영향도
+- ⚠️ **Breaking**: 기존 `triggers.crons` 설정은 Wrangler v3에서 동작하지 않음
+- 모든 cron 사용 프로젝트는 필수 업데이트
+
+### 마이그레이션 가이드
+
+**Before (Old):**
+```toml
+# apps/api/wrangler.toml
+[triggers]
+crons = ["0 */6 * * *", "0 0 * * *"]
+```
+
+**After (New):**
+```toml
+# apps/api/wrangler.toml
+[[schedules]]
+cron = "0 */6 * * *"
+
+[[schedules]]
+cron = "0 0 * * *"
+```
+
+### 적용 방법
+
+1. **파일 열기:**
+   ```bash
+   # API Worker의 wrangler.toml
+   open apps/api/wrangler.toml
+   ```
+
+2. **변경 적용:**
+   - `[triggers]` 섹션 찾기
+   - `crons = [...]` 배열을 `[[schedules]]` 섹션들로 변환
+   - 각 cron 표현식마다 별도의 `[[schedules]]` 블록 생성
+
+3. **검증:**
+   ```bash
+   # Wrangler 설정 검증
+   pnpm --filter @repo/api wrangler deploy --dry-run
+   ```
+
+4. **배포:**
+   ```bash
+   pnpm --filter @repo/api deploy
+   ```
+
+### 참고
+- [Wrangler v3 Migration Guide](https://developers.cloudflare.com/workers/wrangler/migration/v3/)
+- Cron이 없는 프로젝트는 영향 없음
 
 ---
 
